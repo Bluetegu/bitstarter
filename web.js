@@ -8,7 +8,7 @@ buffer = fs.readFileSync('./index.html');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(buffer);  // send support both buffer and string
+  response.send(buffer.toString());  // sending buffer directly doesn't present it as html 
 });
 
 var port = process.env.PORT || 5000;
